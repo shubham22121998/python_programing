@@ -1,0 +1,17 @@
+#PF-Prac-8
+def calculate_net_amount(trans_list):
+    net_amount=0
+    for num in trans_list:
+        if num.startswith('D'):
+             D=int(num[2:])
+             net_amount+=D
+        elif (num.startswith('W')):
+            W=int(num[2:])
+            net_amount =net_amount-W
+        
+    return net_amount
+    
+    
+
+trans_list=["D:350","W:100","W:500","D:1000"]
+print(calculate_net_amount(trans_list))
